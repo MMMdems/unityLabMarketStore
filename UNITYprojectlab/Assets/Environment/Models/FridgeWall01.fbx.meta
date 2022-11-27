@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: FridgeWallMat_01
-    second: {fileID: 2100000, guid: 6e0ab08a0f0748e4b86cf9a06488c493, type: 2}
+    second: {fileID: 2100000, guid: 8b14dcad7cfebad45b1b8490ca6a5462, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,17 +18,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: FridgeWallMat_03
-    second: {fileID: 2100000, guid: f56fe26ddf859e24893604790c2c5b7f, type: 2}
+    second: {fileID: 2100000, guid: 31d4c502793c2fc4f944feb05a5d5f71, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: FridgeWallMat_04
-    second: {fileID: 2100000, guid: 7edbae50da122e74499f33af69a3297c, type: 2}
+    second: {fileID: 2100000, guid: 971b7bf6e9212224ab36ac6c9fcf6f0f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Glass
-    second: {fileID: 2100000, guid: 41327c19b67bcee4db4463fbe8077647, type: 2}
+    second: {fileID: 2100000, guid: 8d98142c7307d0b4e973f37bec1d8746, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
