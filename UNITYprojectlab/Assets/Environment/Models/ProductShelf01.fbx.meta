@@ -3,22 +3,7 @@ guid: c5ac8b2f184a4f2a69cc3c6cc42fda08
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FridgeMeatMat_01
-    second: {fileID: 2100000, guid: 4e6d76f1e1fe14b4196c9f86c0bc755c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FridgeMeatMat_02
-    second: {fileID: 2100000, guid: 6941165db25acb2408f8facdc14a5b60, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ProductShelfMat_01
-    second: {fileID: 2100000, guid: 33a0e0e9b58c7c74ab6fb0879c9d84c8, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,37 +3,7 @@ guid: cf231d535a8419a8a9ded9bbf7f59395
 ModelImporter:
   serializedVersion: 20300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Backplate
-    second: {fileID: 2100000, guid: 2f3883380d8d6af43a70916e110e8b15, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FridgeMeatMat_02
-    second: {fileID: 2100000, guid: 716a86c7859c68f44a28496a327fdb78, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FridgeWallMat_01
-    second: {fileID: 2100000, guid: 4b22031b3091a3e48a0e9a616c842510, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FridgeWallMat_02
-    second: {fileID: 2100000, guid: ea13185f8e3fca643a1580cc1185f419, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FridgeWallMat_04
-    second: {fileID: 2100000, guid: 6398744ba601cda4f855f94d1a198e24, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: White
-    second: {fileID: 2100000, guid: 815e5fb01efc1764f89c7515bb6bd595, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

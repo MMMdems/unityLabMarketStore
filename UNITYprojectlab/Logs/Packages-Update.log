@@ -44,3 +44,15 @@ The following packages were added:
   com.unity.textmeshpro@3.0.6
   com.unity.timeline@1.4.8
   com.unity.ugui@1.0.0
+
+=== Fri Dec  2 21:35:59 2022
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.burst@1.4.6
+  com.unity.collections@0.9.0-preview.6
+  com.unity.mathematics@1.2.6
+The following packages were updated:
+  com.unity.ide.rider from version 2.0.7 to 3.0.15
