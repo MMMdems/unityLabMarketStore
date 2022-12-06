@@ -42,6 +42,37 @@ public class PlayerInteractions : MonoBehaviour
     private void Update()
     {
         Interaction();
+        InteractionWithDialogueWindow();
+    }
+
+    //это сеня написал
+    private void InteractionWithDialogueWindow()
+    {
+        if (Physics.Raycast(pLine.transform.position, pLine.transform.forward, out _hit, interactDistance))
+        {
+            var answer = _hit.transform.gameObject.GetComponent<Answer>();
+            if (answer)
+            {
+                if (buttonGrabPinch.GetStateDown(rightControllerPose.inputSource) && pressed == false)
+                {
+                    answer.SetScenario();
+                    pressed = true;
+                }
+            }
+            var cashier = _hit.transform.gameObject.GetComponent<Cashier>();
+            if (cashier)
+            {
+                if (buttonGrabPinch.GetStateDown(rightControllerPose.inputSource) && pressed == false)
+                {
+                    cashier.StartScenario(1);
+                    pressed = true;
+                }
+            }
+        }
+        if (buttonGrabPinch.GetStateUp(rightControllerPose.inputSource))
+        {
+            pressed = false;
+        }
     }
 
     private void Interaction()
