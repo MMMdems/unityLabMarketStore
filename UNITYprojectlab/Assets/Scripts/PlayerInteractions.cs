@@ -5,9 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class PlayerInteractions : MonoBehaviour
 {
+    //это сеня написал
+    [SerializeField] private Cashier _cashier;
+    //все дальше не сеня
+
     private InteractableObject _interactable;
     private InteractableObject _prevInteractable;
     private RaycastHit _hit;
@@ -27,6 +32,8 @@ public class PlayerInteractions : MonoBehaviour
     [SerializeField] private SteamVR_Action_Boolean buttonGrabPinch = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
     [SerializeField] private SteamVR_Action_Boolean buttonGrabGrip = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabGrip");
     [SerializeField] private bool pressed = false;
+    [SerializeField] private bool lineMod = false;
+    private bool gripPressed = false;
 
     [Header("Liner")] 
     [SerializeField] private GameObject pLinePrefab;
@@ -36,9 +43,11 @@ public class PlayerInteractions : MonoBehaviour
     {
         pLine = Instantiate(pLinePrefab, rightController.transform.position, rightController.transform.rotation) as GameObject;
         pLine.transform.SetParent(rightController.transform);
+        pLine.SetActive(false);
         pressed = false;
+        gripPressed = false;
     }
-
+    
     private void Update()
     {
         Interaction();
@@ -48,6 +57,13 @@ public class PlayerInteractions : MonoBehaviour
     //это сеня написал
     private void InteractionWithDialogueWindow()
     {
+        if (buttonGrabGrip.GetStateDown(rightControllerPose.inputSource) && pressed == false)
+        {
+            pLine.SetActive(!pLine.activeSelf);
+            lineMod = !lineMod;
+            gripPressed = true;
+        }
+
         if (Physics.Raycast(pLine.transform.position, pLine.transform.forward, out _hit, interactDistance))
         {
             var answer = _hit.transform.gameObject.GetComponent<Answer>();
@@ -62,18 +78,59 @@ public class PlayerInteractions : MonoBehaviour
             var cashier = _hit.transform.gameObject.GetComponent<Cashier>();
             if (cashier)
             {
+                pLine.SetActive(true);
+                lineMod = true;
                 if (buttonGrabPinch.GetStateDown(rightControllerPose.inputSource) && pressed == false)
                 {
                     cashier.StartScenario(1);
                     pressed = true;
                 }
             }
+            var buttonName = _hit.transform.name;
+            if (buttonName == "Up")
+            {
+                if (buttonGrabPinch.GetStateDown(rightControllerPose.inputSource) && pressed == false)
+                {
+                    _cashier.ChangeProductIconTo(-1);
+                    pressed = true;
+                }
+            }
+            else if (buttonName == "Down")
+            {
+                if (buttonGrabPinch.GetStateDown(rightControllerPose.inputSource) && pressed == false)
+                {
+                    _cashier.ChangeProductIconTo(1);
+                    pressed = true;
+                }
+            }
+            else if(buttonName.Substring(1) == "minus")
+            {
+                if (buttonGrabPinch.GetStateDown(rightControllerPose.inputSource) && pressed == false)
+                {
+                    _cashier.RemoveProduct(int.Parse(buttonName[0].ToString()));
+                    pressed = true;
+                }
+            }
+            else if (buttonName.Substring(1) == "plus")
+            {
+                if (buttonGrabPinch.GetStateDown(rightControllerPose.inputSource) && pressed == false)
+                {
+                    _cashier.AddProduct(int.Parse(buttonName[0].ToString()));
+                    pressed = true;
+                }
+            }
         }
+
         if (buttonGrabPinch.GetStateUp(rightControllerPose.inputSource))
         {
             pressed = false;
         }
+        if (buttonGrabGrip.GetStateUp(rightControllerPose.inputSource))
+        {
+            gripPressed = false;
+        }
     }
+    //все, дальше не сеня
 
     private void Interaction()
     {
@@ -142,13 +199,11 @@ public class PlayerInteractions : MonoBehaviour
     {
         print("outlined " + _interactable.name);
 
-        if (_interactable.typeInteract == InteractableObject.TypeInteract.Collectable)
+        if (_interactable.typeInteract == InteractableObject.TypeInteract.Collectable && lineMod)
         {
-            
             objectInfo.SetActive(true);
             textName.text = _interactable.objectName;
             textPrice.text = $"{_interactable.objectPrice} P";
-            
         }
 
         _interactable.OutlineOn();

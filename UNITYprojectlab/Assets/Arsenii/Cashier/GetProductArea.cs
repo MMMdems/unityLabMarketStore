@@ -11,7 +11,11 @@ public class GetProductArea : MonoBehaviour
         var interactable = other.GetComponent<InteractableObject>();
         if(interactable)
         {
-            _cashier.AddProduct(interactable);
+            if(!interactable.bought)
+            {
+                _cashier.AddProduct(interactable);
+                StartCoroutine(interactable.ReturnProduct());
+            }
         }
     }
 }

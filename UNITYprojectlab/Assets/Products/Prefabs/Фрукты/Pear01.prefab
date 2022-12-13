@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6360d9022330e49a38cabfc4419805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bought: 0
   objectName: "\u0413\u0440\u0443\u0448\u0430 \u0424\u043E\u0440\u0435\u043B\u044C"
   objectPrice: 229.99
   typeInteract: 1
@@ -154,9 +155,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &412242235366144504
 MonoBehaviour:
   m_ObjectHideFlags: 0
