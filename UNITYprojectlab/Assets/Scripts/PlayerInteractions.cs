@@ -21,6 +21,9 @@ public class PlayerInteractions : MonoBehaviour
     [SerializeField] private GameObject objectInfo;
     [SerializeField] private TextMeshProUGUI textName;
     [SerializeField] private TextMeshProUGUI textPrice;
+
+    [SerializeField] private float money = 20000f;
+    [SerializeField] private TextMeshProUGUI textMoney;
     
     [SerializeField] private float interactDistance = 3f;
     
