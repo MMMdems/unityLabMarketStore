@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 public class Cashier : MonoBehaviour
 {
+    [SerializeField] private PlayerInteractions _playerInteraction;
+
     private List<string> productsName;
     private List<int> productsCount;
     private List<float> productsPrice;
 
     public float FontSize;
+    public Transform BagSpawnPlace;
+    public GameObject ProductBag;
     public GameObject PlayerDialogueWindow;
     public GameObject CashierDialogueWindow;
     public GameObject CheckList;
@@ -199,11 +203,21 @@ public class Cashier : MonoBehaviour
         {
             if (i == 3)
             {
-                Question.text = "С вас " + ((float)(fullPrice)).ToString() + " Р. Спасибо за покупку! Приходите еще!";
-                productsCount.Clear();
-                productsName.Clear();
-                fullPrice = 0;
-                FullPriceText.text = "0.00";
+                if (_playerInteraction.GetMoney() > fullPrice)
+                {
+                    Question.text = "С вас " + ((float)(fullPrice)).ToString() + " Р. Спасибо за покупку! Приходите еще!";
+                    productsCount.Clear();
+                    productsName.Clear();
+                    _playerInteraction.SetMoney(_playerInteraction.GetMoney() - fullPrice);
+                    fullPrice = 0;
+                    FullPriceText.text = "0.00";
+
+                    Instantiate(ProductBag, BagSpawnPlace.position, Quaternion.identity);
+                }
+                else
+                {
+                    Question.text = "У вас не хватает средств на карте";
+                }
             }
 
             else if (i == 4)

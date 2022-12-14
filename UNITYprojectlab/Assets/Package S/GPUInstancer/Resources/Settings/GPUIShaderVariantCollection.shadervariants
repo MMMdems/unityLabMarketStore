@@ -16,6 +16,8 @@ ShaderVariantCollection:
       variants:
       - keywords: 
         passType: 0
+      - keywords: _ALPHATEST_ON
+        passType: 0
       - keywords: _NORMALMAP
         passType: 0
   - first: {fileID: 4800000, guid: 21d58e4336e5aba428a6b22e2f0d6669, type: 3}

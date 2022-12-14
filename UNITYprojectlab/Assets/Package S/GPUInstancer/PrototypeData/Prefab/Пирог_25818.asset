@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabObject: {fileID: 1290652112773484520, guid: 79b962ae32b2f5b7c9a7ce97397b7b08, type: 3}
   isShadowCasting: 1
-  useCustomShadowDistance: 0
+  useCustomShadowDistance: 1
   shadowDistance: 1
   shadowLODMap:
   - 0
@@ -86,7 +86,7 @@ MonoBehaviour:
     constraints: 0
     drag: 0
     isKinematic: 0
-    interpolation: 0
+    interpolation: 1
   meshRenderersDisabled: 0
   isTransformsSerialized: 0
   serializedTransformData: {fileID: 0}

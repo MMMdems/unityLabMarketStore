@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabObject: {fileID: 7607051760079396185, guid: 65b124abc0cac8a2abda6a2d7675c288, type: 3}
   isShadowCasting: 1
-  useCustomShadowDistance: 0
-  shadowDistance: 0
+  useCustomShadowDistance: 1
+  shadowDistance: 1
   shadowLODMap:
   - 0
   - 4
@@ -34,7 +34,7 @@ MonoBehaviour:
   - 0
   - 0
   useOriginalShaderForShadow: 0
-  cullShadows: 0
+  cullShadows: 1
   minDistance: 0
   maxDistance: 500
   isFrustumCulling: 1
@@ -44,7 +44,7 @@ MonoBehaviour:
   occlusionOffset: 0
   occlusionAccuracy: 1
   boundsOffset: {x: 0, y: 0, z: 0}
-  isLODCrossFade: 0
+  isLODCrossFade: 1
   isLODCrossFadeAnimate: 1
   lodFadeTransitionWidth: 0.1
   lodBiasAdjustment: 1
@@ -69,8 +69,8 @@ MonoBehaviour:
     billboardFaceCamPos: 0
     normalStrength: 1
   isBillboardDisabled: 0
-  useGeneratedBillboard: 0
-  checkedForBillboardExtensions: 0
+  useGeneratedBillboard: 1
+  checkedForBillboardExtensions: 1
   autoUpdateTransformData: 1
   treeType: 0
   enableRuntimeModifications: 1
@@ -78,15 +78,15 @@ MonoBehaviour:
   addRemoveInstancesAtRuntime: 0
   extraBufferSize: 0
   addRuntimeHandlerScript: 0
-  hasRigidBody: 0
+  hasRigidBody: 1
   rigidbodyData:
-    useGravity: 0
-    angularDrag: 0
-    mass: 0
+    useGravity: 1
+    angularDrag: 0.05
+    mass: 1
     constraints: 0
     drag: 0
     isKinematic: 0
-    interpolation: 0
+    interpolation: 1
   meshRenderersDisabled: 0
   isTransformsSerialized: 0
   serializedTransformData: {fileID: 0}

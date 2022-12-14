@@ -19,13 +19,13 @@ public class Cart : MonoBehaviour
 
     void Update()
     {
-        agent.CalculatePath(Player.position, path);
-        if (path.status == NavMeshPathStatus.PathComplete)
-        {
+        //agent.CalculatePath(Player.position, path);
+        //if (path.status == NavMeshPathStatus.PathComplete)
+        //{
             if (Vector3.Distance(Player.position, transform.position) > minDistance)
             {
                 agent.SetDestination(Player.position);
             }
-        }
+        //}
     }
 }

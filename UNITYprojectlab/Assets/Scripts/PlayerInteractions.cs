@@ -22,7 +22,7 @@ public class PlayerInteractions : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textName;
     [SerializeField] private TextMeshProUGUI textPrice;
 
-    [SerializeField] private float money = 20000f;
+    [SerializeField] private float money = 500f;
     [SerializeField] private TextMeshProUGUI textMoney;
     
     [SerializeField] private float interactDistance = 3f;
@@ -55,6 +55,7 @@ public class PlayerInteractions : MonoBehaviour
     {
         Interaction();
         InteractionWithDialogueWindow();
+        textMoney.text = $" {money} Р";
     }
 
     //это сеня написал
@@ -132,6 +133,15 @@ public class PlayerInteractions : MonoBehaviour
         {
             gripPressed = false;
         }
+    }
+
+    public float GetMoney()
+    {
+        return money;
+    }
+    public void SetMoney(float newMoney)
+    {
+        money = newMoney;
     }
     //все, дальше не сеня
 
